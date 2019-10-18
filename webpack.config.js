@@ -57,6 +57,12 @@ config.module
  */
 
 config.plugin("clear").use(new CleanWebpackPlugin());
+config.plugin('extract-css').use(MiniCssExtractPlugin, [
+  {
+    filename: 'css/[name].css',
+    chunkFilename: 'css/[name].css'
+  }
+])
 
 config.plugin("html").use(HtmlWebpackPlugin, [{
   /*
